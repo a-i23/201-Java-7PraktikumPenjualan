@@ -1,6 +1,7 @@
 package com.ahmadihwan.praktikumpenjualan;
 
 import com.ahmadihwan.praktikumpenjualan.db.Database;
+import com.ahmadihwan.praktikumpenjualan.model.JenisBarang;
 import java.sql.Connection;
 
 public class Main {
@@ -9,5 +10,9 @@ public class Main {
         
         Database db = new Database();
         Connection con = db.getConnection();
+        
+        JenisBarang jenisBarang = new JenisBarang(con);
+        jenisBarang.setNamaJenisBarang("TESTING namajenisbarang");
+        jenisBarang.create();
     }
 }
